@@ -33,6 +33,7 @@ public class Main extends Application{
             primaryStage.show();
             primaryStage.setResizable(false);
             MainWindowController controller = loader.getController();
+            controller.setDialogStage(primaryStage);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
