@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -32,6 +33,8 @@ public class MainWindowController implements Initializable {
     private RailFence rf = new RailFence();
     private PassPhrase ph = new PassPhrase();
     private RotatingGrid rg = new RotatingGrid();
+    private S_Des sdes = new S_Des();
+    private Multiplication mlt = new Multiplication();
 
     public void initialize(URL url, ResourceBundle rb) {
         initMethodsCombo();
@@ -45,8 +48,8 @@ public class MainWindowController implements Initializable {
         array.add("Железнодорожная изгородь");
         array.add("Ключевая фраза");
         array.add("Метод поворачивающейся решетки");
-        array.add("Цезарь");
-        array.add("Улучшенный Цезарь");
+        array.add("Криптосистема Цезаря");
+        array.add("Умножение");
         methodsCombo.getItems().addAll(array);
     }
 
@@ -71,8 +74,18 @@ public class MainWindowController implements Initializable {
                 }
                 break;
             case 3:
+                targetArea.setText(sdes.Encryption(message, Integer.parseInt(key)));
                 break;
             case 4:
+                if(Integer.parseInt(key) == 1 || Integer.parseInt(key) % 53 == 0){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.initOwner(this.dialogStage);
+                    alert.setTitle("Ошибка");
+                    alert.setHeaderText("Неверный ключ");
+                    alert.showAndWait();
+                } else {
+                    targetArea.setText(mlt.Encryption(message, Integer.parseInt(key)));
+                }
                 break;
         }
     }
@@ -98,8 +111,10 @@ public class MainWindowController implements Initializable {
                 }
                 break;
             case 3:
+                targetArea.setText(sdes.Decryption(message, Integer.parseInt(key)));
                 break;
             case 4:
+                targetArea.setText(mlt.Decryption(message, Integer.parseInt(key)));
                 break;
         }
     }
