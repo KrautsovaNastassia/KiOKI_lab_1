@@ -1,10 +1,10 @@
 # KiOKI_lab_1
-KiOKI: Laboratory work №1. 
-Language: Java
-App type: Window application
-Authors:
-  - Anastasiya Shcharbuk
-  - Nastassia Krautsova
+# KiOKI: Laboratory work №1. 
+# Language: Java
+# App type: Window application
+# Authors:
+#  - Anastasiya Shcharbuk
+#  - Nastassia Krautsova
 
 Methods of cryptography:
 1. Rail Fence 
