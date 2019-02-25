@@ -2,6 +2,7 @@
 KiOKI: Laboratory work №1. <br>
 Language: Java <br>
 App type: Window application <br>
+<br>
 Authors:
  - Anastasiya Shcharbuk
  - Nastassia Krautsova
